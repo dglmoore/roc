@@ -31,4 +31,17 @@ export class Curve {
         this.x = x;
         this.y = y;
     }
+
+    /**
+     * Compute the area under the curve (AUC) using the trapzoidal rule.
+     */
+    public auc(): number {
+        let auc: number = 0;
+        for (let i = 0, len = this.x.length; i < len - 1; ++i) {
+            const dx = this.x[i + 1] - this.x[i];
+            const f = this.y[i] + this.y[i + 1];
+            auc += 0.5 * f * dx;
+        }
+        return auc;
+    }
 }
