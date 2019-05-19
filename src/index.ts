@@ -1,33 +1,11 @@
-function argsort(data: number[]): number[] {
-    return data
-        .map((x, i) => [x, i])
-        .sort((a, b) => (a[0] < b[0] ? -1 : a[0] === b[0] ? 0 : 1))
-        .map(x => x[1]);
-}
-
-function applysort<T>(data: T[], perm: number[]): T[] {
-    return perm.map(i => data[i]);
-}
-
-function cumsum(data: number[]): number[] {
-    let acc: number = 0;
-    return data.map(x => (acc += x));
-}
-
-function all(data: boolean[]): boolean {
-    return data.every(x => x);
-}
-
-function none(data: boolean[]): boolean {
-    return data.every(x => !x);
-}
+import * as util from './util';
 
 /**
  * The [[ROC]] class represents a receiver operating characteristic curve.
  */
 export class ROC {
     /**
-     * Create an [[ROC]] curve from a binary classification. 
+     * Create an [[ROC]] curve from a binary classification.
      *
      * @param real Real binary labels
      * @param score Target scores
@@ -39,18 +17,18 @@ export class ROC {
     public static curve(real: boolean[], score: number[]): ROC {
         if (real.length !== score.length) {
             throw new Error('real and score must have the same length');
-        } else if (all(real)) {
+        } else if (util.allTrue(real)) {
             throw new Error('must have at least one negative sample');
-        } else if (none(real)) {
+        } else if (util.allFalse(real)) {
             throw new Error('must have at least one positive sample');
         }
 
-        const perm = argsort(score).reverse();
-        const layers = applysort(real, perm).map(x => +x);
-        score = applysort(score, perm);
+        const perm = util.argsort(score).reverse();
+        const layers = util.applyperm(real, perm).map(x => +x);
+        score = util.applyperm(score, perm);
 
-        const tps = [0].concat(cumsum(layers));
-        const fps = [0].concat(cumsum(layers.map(x => 1 - x)));
+        const tps = [0].concat(util.cumsum(layers));
+        const fps = [0].concat(util.cumsum(layers.map(x => 1 - x)));
 
         const p = tps[tps.length - 1];
         const f = fps[fps.length - 1];
