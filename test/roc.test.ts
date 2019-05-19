@@ -3,20 +3,6 @@ import { ROC } from '../src/roc';
 test('.canary', () => expect(ROC).toBeDefined());
 
 describe('construction', function() {
-    test('.fpr has length less than 2', function() {
-        expect(() => new ROC([], [0, 1])).toThrow(/at least two elements/);
-        expect(() => new ROC([0], [0, 1])).toThrow(/at least two elements/);
-    });
-
-    test('.tpr has length less than 2', function() {
-        expect(() => new ROC([0, 1], [])).toThrow(/at least two elements/);
-        expect(() => new ROC([0, 1], [0])).toThrow(/at least two elements/);
-    });
-
-    test('.fpr and tpr have different lengths', function() {
-        expect(() => new ROC([0.0, 1.0], [0.0, 0.2, 1.0])).toThrow(/same length/);
-    });
-
     test('.invalid value in fpr', function() {
         expect(() => new ROC([0, -1, 0.5], [0.1, 0.2, 0.3])).toThrow(/in the range \[0, 1\]/);
     });

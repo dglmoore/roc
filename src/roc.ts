@@ -59,17 +59,12 @@ export class ROC extends Curve {
      *
      * @param fpr Increasing false positive rates
      * @param tpr Increasing true positive rates
-     * @throws `Error` if `fpr` and `tpr` have different lengths
      * @throws `Error` if `fpr` or `tpr` does not start with `0`
      * @throws `Error` if `fpr` or `tpr` does not end with `1`
      * @throws `Error` if `fpr` or `tpr` has a value outside the range `[0,1]`
      */
     constructor(fpr: number[], tpr: number[]) {
-        if (fpr.length < 2) {
-            throw new Error('fpr must have at least two elements');
-        } else if (tpr.length < 2) {
-            throw new Error('tpr must have at least two elements');
-        } else if (fpr.some(x => x < 0 || x > 1)) {
+        if (fpr.some(x => x < 0 || x > 1)) {
             throw new Error('fpr values must be in the range [0, 1]');
         } else if (tpr.some(x => x < 0 || x > 1)) {
             throw new Error('tpr values must be in the range [0, 1]');
