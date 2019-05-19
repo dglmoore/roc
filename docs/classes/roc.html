@@ -909,16 +909,25 @@ img { max-width: 100%; }
 </header>
 <nav class="tsd-navigation secondary">
 	<ul>
+		<li class=" tsd-kind-class">
+			<a href="curve.html" class="tsd-kind-icon">Curve</a>
+		</li>
 		<li class="current tsd-kind-class">
 			<a href="roc.html" class="tsd-kind-icon">ROC</a>
 			<ul>
-				<li class=" tsd-kind-constructor tsd-parent-kind-class">
+				<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 					<a href="roc.html#constructor" class="tsd-kind-icon">constructor</a>
 				</li>
-				<li class=" tsd-kind-property tsd-parent-kind-class">
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a href="roc.html#x" class="tsd-kind-icon">x</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a href="roc.html#y" class="tsd-kind-icon">y</a>
+				</li>
+				<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 					<a href="roc.html#fpr" class="tsd-kind-icon">fpr</a>
 				</li>
-				<li class=" tsd-kind-property tsd-parent-kind-class">
+				<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 					<a href="roc.html#tpr" class="tsd-kind-icon">tpr</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
@@ -956,7 +965,12 @@ img { max-width: 100%; }
 			<h3>Hierarchy</h3>
 			<ul class="tsd-hierarchy">
 				<li>
-					<span class="target">ROC</span>
+					<a href="curve.html" class="tsd-signature-type">Curve</a>
+					<ul class="tsd-hierarchy">
+						<li>
+							<span class="target">ROC</span>
+						</li>
+					</ul>
 				</li>
 			</ul>
 		</section>
@@ -967,14 +981,21 @@ img { max-width: 100%; }
 					<section class="tsd-index-section ">
 						<h3>Constructors</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="roc.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="roc.html#constructor" class="tsd-kind-icon">constructor</a></li>
+						</ul>
+					</section>
+					<section class="tsd-index-section tsd-is-inherited">
+						<h3>Properties</h3>
+						<ul class="tsd-index-list">
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="roc.html#x" class="tsd-kind-icon">x</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="roc.html#y" class="tsd-kind-icon">y</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
-						<h3>Properties</h3>
+						<h3>Accessors</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-property tsd-parent-kind-class"><a href="roc.html#fpr" class="tsd-kind-icon">fpr</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-class"><a href="roc.html#tpr" class="tsd-kind-icon">tpr</a></li>
+							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="roc.html#fpr" class="tsd-kind-icon">fpr</a></li>
+							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="roc.html#tpr" class="tsd-kind-icon">tpr</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
@@ -988,17 +1009,18 @@ img { max-width: 100%; }
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Constructors</h2>
-			<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+			<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 				<a name="constructor" class="tsd-anchor"></a>
 				<h3>constructor</h3>
-				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 					<li class="tsd-signature tsd-kind-icon">new ROC<span class="tsd-signature-symbol">(</span>fpr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>, tpr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="roc.html" class="tsd-signature-type">ROC</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
+							<p>Overrides <a href="curve.html">Curve</a>.<a href="curve.html#constructor">constructor</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/dglmoore/roc/blob/0365abc/src/index.ts#L50">index.ts:50</a></li>
+								<li>Defined in index.ts:55</li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1044,15 +1066,50 @@ img { max-width: 100%; }
 				</ul>
 			</section>
 		</section>
-		<section class="tsd-panel-group tsd-member-group ">
+		<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
 			<h2>Properties</h2>
-			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+				<a name="x" class="tsd-anchor"></a>
+				<h3>x</h3>
+				<div class="tsd-signature tsd-kind-icon">x<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
+				<aside class="tsd-sources">
+					<p>Inherited from <a href="curve.html">Curve</a>.<a href="curve.html#x">x</a></p>
+					<ul>
+						<li>Defined in curve.ts:8</li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The x-coordinates of the points of the curve.</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+				<a name="y" class="tsd-anchor"></a>
+				<h3>y</h3>
+				<div class="tsd-signature tsd-kind-icon">y<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
+				<aside class="tsd-sources">
+					<p>Inherited from <a href="curve.html">Curve</a>.<a href="curve.html#y">y</a></p>
+					<ul>
+						<li>Defined in curve.ts:12</li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The y-coordinates of the points of the curve.</p>
+					</div>
+				</div>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group ">
+			<h2>Accessors</h2>
+			<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 				<a name="fpr" class="tsd-anchor"></a>
 				<h3>fpr</h3>
-				<div class="tsd-signature tsd-kind-icon">fpr<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
+				<div class="tsd-signature tsd-kind-icon">fpr<span class="tsd-signature-symbol">:</span> </div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/dglmoore/roc/blob/0365abc/src/index.ts#L45">index.ts:45</a></li>
+						<li>Defined in index.ts:46</li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1061,13 +1118,13 @@ img { max-width: 100%; }
 					</div>
 				</div>
 			</section>
-			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+			<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 				<a name="tpr" class="tsd-anchor"></a>
 				<h3>tpr</h3>
-				<div class="tsd-signature tsd-kind-icon">tpr<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
+				<div class="tsd-signature tsd-kind-icon">tpr<span class="tsd-signature-symbol">:</span> </div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/dglmoore/roc/blob/0365abc/src/index.ts#L50">index.ts:50</a></li>
+						<li>Defined in index.ts:53</li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1089,7 +1146,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/dglmoore/roc/blob/0365abc/src/index.ts#L17">index.ts:17</a></li>
+								<li>Defined in index.ts:18</li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">

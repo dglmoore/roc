@@ -24,6 +24,8 @@
   "typedocOptions": {
     "out": "docs",
     "mode": "file",
+    "target": "ES2019",
+    "module": "commonjs",
     "includes": "src",
     "ignoreCompilerErrors": true,
     "excludePrivate": true,

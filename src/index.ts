@@ -1,9 +1,10 @@
+import { Curve } from './curve';
 import * as util from './util';
 
 /**
  * The [[ROC]] class represents a receiver operating characteristic curve.
  */
-export class ROC {
+export class ROC extends Curve {
     /**
      * Create an [[ROC]] curve from a binary classification.
      *
@@ -42,12 +43,16 @@ export class ROC {
     /**
      * Increasing false positive rates.
      */
-    public fpr: number[];
+    public get fpr(): number[] {
+        return this.x;
+    }
 
     /**
      * Increasing true positive rates.
      */
-    public tpr: number[];
+    public get tpr(): number[] {
+        return this.y;
+    }
 
     /**
      * Construct an [[ROC]] curve from a false positive and true positive rates.
@@ -64,8 +69,6 @@ export class ROC {
             throw new Error('fpr must have at least two elements');
         } else if (tpr.length < 2) {
             throw new Error('tpr must have at least two elements');
-        } else if (fpr.length !== tpr.length) {
-            throw new Error('fpr and tpr must have the same length');
         } else if (fpr.some(x => x < 0 || x > 1)) {
             throw new Error('fpr values must be in the range [0, 1]');
         } else if (tpr.some(x => x < 0 || x > 1)) {
@@ -80,7 +83,6 @@ export class ROC {
             throw new Error('last tpr value must be 1');
         }
 
-        this.fpr = fpr;
-        this.tpr = tpr;
+        super(fpr, tpr);
     }
 }
