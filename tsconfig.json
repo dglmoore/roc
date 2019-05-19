@@ -20,5 +20,15 @@
     "noFallthroughCasesInSwitch": true,
   },
   "include": ["src"],
-  "exclude": ["node_modules", "test"]
+  "exclude": ["node_modules", "test"],
+  "typedocOptions": {
+    "out": "docs",
+    "mode": "file",
+    "includes": "src",
+    "ignoreCompilerErrors": true,
+    "excludePrivate": true,
+    "excludeNotExported": true,
+    "stripInternal": true,
+    "theme": "minimal"
+  }
 }
