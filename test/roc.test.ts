@@ -1,4 +1,4 @@
-import { ROC } from '../src/index';
+import { ROC } from '../src/roc';
 
 test('.canary', () => expect(ROC).toBeDefined());
 
