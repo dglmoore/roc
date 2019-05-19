@@ -22,7 +22,20 @@ function none(data: boolean[]): boolean {
     return data.every(x => !x);
 }
 
+/**
+ * The [[ROC]] class represents a receiver operating characteristic curve.
+ */
 export class ROC {
+    /**
+     * Create an [[ROC]] curve from a binary classification. 
+     *
+     * @param real Real binary labels
+     * @param score Target scores
+     * @throws `Error` if `real` and `score` have different lengths
+     * @throws `Error` if `real` has no `true` labels
+     * @throws `Error` if `real` has no `false` labels
+     * @returns A computed ROC curve.
+     */
     public static curve(real: boolean[], score: number[]): ROC {
         if (real.length !== score.length) {
             throw new Error('real and score must have the same length');
@@ -48,9 +61,26 @@ export class ROC {
         return new ROC(fpr, tpr);
     }
 
+    /**
+     * Increasing false positive rates.
+     */
     public fpr: number[];
+
+    /**
+     * Increasing true positive rates.
+     */
     public tpr: number[];
 
+    /**
+     * Construct an [[ROC]] curve from a false positive and true positive rates.
+     *
+     * @param fpr Increasing false positive rates
+     * @param tpr Increasing true positive rates
+     * @throws `Error` if `fpr` and `tpr` have different lengths
+     * @throws `Error` if `fpr` or `tpr` does not start with `0`
+     * @throws `Error` if `fpr` or `tpr` does not end with `1`
+     * @throws `Error` if `fpr` or `tpr` has a value outside the range `[0,1]`
+     */
     constructor(fpr: number[], tpr: number[]) {
         if (fpr.length < 2) {
             throw new Error('fpr must have at least two elements');
@@ -71,6 +101,7 @@ export class ROC {
         } else if (tpr[tpr.length - 1] !== 1) {
             throw new Error('last tpr value must be 1');
         }
+
         this.fpr = fpr;
         this.tpr = tpr;
     }
