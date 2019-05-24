@@ -916,10 +916,7 @@ img { max-width: 100%; }
 					<a href="curve.html#constructor" class="tsd-kind-icon">constructor</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-class">
-					<a href="curve.html#x" class="tsd-kind-icon">x</a>
-				</li>
-				<li class=" tsd-kind-property tsd-parent-kind-class">
-					<a href="curve.html#y" class="tsd-kind-icon">y</a>
+					<a href="curve.html#points" class="tsd-kind-icon">points</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="curve.html#auc" class="tsd-kind-icon">auc</a>
@@ -931,6 +928,9 @@ img { max-width: 100%; }
 		</li>
 		<li class=" tsd-kind-class">
 			<a href="svg.html" class="tsd-kind-icon">SVG</a>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="../interfaces/ipoint.html" class="tsd-kind-icon">IPoint</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="../globals.html#allfalse" class="tsd-kind-icon">all<wbr>False</a>
@@ -984,8 +984,7 @@ img { max-width: 100%; }
 					<section class="tsd-index-section ">
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-property tsd-parent-kind-class"><a href="curve.html#x" class="tsd-kind-icon">x</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-class"><a href="curve.html#y" class="tsd-kind-icon">y</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class"><a href="curve.html#points" class="tsd-kind-icon">points</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
@@ -1003,43 +1002,32 @@ img { max-width: 100%; }
 				<a name="constructor" class="tsd-anchor"></a>
 				<h3>constructor</h3>
 				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">new <wbr>Curve<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>, y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="curve.html" class="tsd-signature-type">Curve</a></li>
+					<li class="tsd-signature tsd-kind-icon">new <wbr>Curve<span class="tsd-signature-symbol">(</span>points<span class="tsd-signature-symbol">: </span><a href="../interfaces/ipoint.html" class="tsd-signature-type">IPoint</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="curve.html" class="tsd-signature-type">Curve</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/dglmoore/roc/blob/092fd62/src/curve.ts#L12">curve.ts:12</a></li>
+								<li>Defined in <a href="https://github.com/dglmoore/roc/blob/33bb97a/src/curve.ts#L20">curve.ts:20</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>Construct a <a href="curve.html">Curve</a> from x- and y-coordinates.</p>
+								<p>Construct a <a href="curve.html">Curve</a> from an array of <a href="../interfaces/ipoint.html">IPoint</a> objects.</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>throws</dt>
-								<dd><p><code>Error</code> if <code>x</code> or <code>y</code> has fewer than 2 elements</p>
-								</dd>
-								<dt>throws</dt>
-								<dd><p><code>Error</code> if <code>x</code> and <code>y</code> have different lengths</p>
+								<dd><p><code>Error</code> if <code>points</code> has fewer than two points</p>
 								</dd>
 							</dl>
 						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>x: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
+								<h5>points: <a href="../interfaces/ipoint.html" class="tsd-signature-type">IPoint</a><span class="tsd-signature-symbol">[]</span></h5>
 								<div class="tsd-comment tsd-typography">
 									<div class="lead">
-										<p>the x-coordinates in increasing order</p>
-									</div>
-								</div>
-							</li>
-							<li>
-								<h5>y: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>the y-coordinates</p>
+										<p>An array of points</p>
 									</div>
 								</div>
 							</li>
@@ -1052,34 +1040,14 @@ img { max-width: 100%; }
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Properties</h2>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-				<a name="x" class="tsd-anchor"></a>
-				<h3>x</h3>
-				<div class="tsd-signature tsd-kind-icon">x<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
+				<a name="points" class="tsd-anchor"></a>
+				<h3>points</h3>
+				<div class="tsd-signature tsd-kind-icon">points<span class="tsd-signature-symbol">:</span> <a href="../interfaces/ipoint.html" class="tsd-signature-type">IPoint</a><span class="tsd-signature-symbol">[]</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/dglmoore/roc/blob/092fd62/src/curve.ts#L8">curve.ts:8</a></li>
+						<li>Defined in <a href="https://github.com/dglmoore/roc/blob/33bb97a/src/curve.ts#L20">curve.ts:20</a></li>
 					</ul>
 				</aside>
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>The x-coordinates of the points of the curve.</p>
-					</div>
-				</div>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-				<a name="y" class="tsd-anchor"></a>
-				<h3>y</h3>
-				<div class="tsd-signature tsd-kind-icon">y<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in <a href="https://github.com/dglmoore/roc/blob/092fd62/src/curve.ts#L12">curve.ts:12</a></li>
-					</ul>
-				</aside>
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>The y-coordinates of the points of the curve.</p>
-					</div>
-				</div>
 			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
@@ -1094,7 +1062,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/dglmoore/roc/blob/092fd62/src/curve.ts#L38">curve.ts:38</a></li>
+								<li>Defined in <a href="https://github.com/dglmoore/roc/blob/33bb97a/src/curve.ts#L38">curve.ts:38</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">

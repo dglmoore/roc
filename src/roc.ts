@@ -44,14 +44,14 @@ export class ROC extends Curve {
      * Increasing false positive rates.
      */
     public get fpr(): number[] {
-        return this.x;
+        return this.points.map(p => p.x);
     }
 
     /**
      * Increasing true positive rates.
      */
     public get tpr(): number[] {
-        return this.y;
+        return this.points.map(p => p.y);
     }
 
     /**
@@ -78,6 +78,10 @@ export class ROC extends Curve {
             throw new Error('last tpr value must be 1');
         }
 
-        super(fpr, tpr);
+        super(
+            fpr.map((x, i) => {
+                return { x, y: tpr[i] };
+            }),
+        );
     }
 }

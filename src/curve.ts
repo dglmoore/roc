@@ -1,35 +1,35 @@
 /**
+ * The [[IPoint]] interface represents a point in 2-dimensions.
+ */
+export interface IPoint {
+    /**
+     * The x-coordinate of the point.
+     */
+    x: number;
+
+    /**
+     * The y-coordinate of the point.
+     */
+    y: number;
+}
+
+/**
  * The [[Curve]] class represents a generic 2-dimensional curve.
  */
 export class Curve {
-    /**
-     * The x-coordinates of the points of the curve.
-     */
-    public x: number[];
-    /**
-     * The y-coordinates of the points of the curve.
-     */
-    public y: number[];
+    public points: IPoint[];
 
     /**
-     * Construct a [[Curve]] from x- and y-coordinates.
+     * Construct a [[Curve]] from an array of [[IPoint]] objects.
      *
-     * @param x the x-coordinates in increasing order
-     * @param y the y-coordinates
-     * @throws `Error` if `x` or `y` has fewer than 2 elements
-     * @throws `Error` if `x` and `y` have different lengths
+     * @param points An array of points
+     * @throws `Error` if `points` has fewer than two points
      */
-    constructor(x: number[], y: number[]) {
-        if (x.length < 2) {
-            throw new Error('x-coordinates must have at least two elements');
-        } else if (y.length < 2) {
-            throw new Error('y-coordinates must have at least two elements');
-        } else if (x.length !== y.length) {
-            throw new Error('x and y must have the same length');
+    constructor(points: IPoint[]) {
+        if (points.length < 2) {
+            throw new Error('curve must have at least two points');
         }
-
-        this.x = x;
-        this.y = y;
+        this.points = points;
     }
 
     /**
@@ -37,10 +37,10 @@ export class Curve {
      */
     public auc(): number {
         let auc: number = 0;
-        for (let i = 0, len = this.x.length; i < len - 1; ++i) {
-            const dx = this.x[i + 1] - this.x[i];
-            const f = this.y[i] + this.y[i + 1];
-            auc += 0.5 * f * dx;
+        for (let i = 0, len = this.points.length; i < len - 1; ++i) {
+            const a = this.points[i];
+            const b = this.points[i + 1];
+            auc += 0.5 * (a.y + b.y) * (b.x - a.x);
         }
         return auc;
     }
