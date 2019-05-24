@@ -930,6 +930,9 @@ img { max-width: 100%; }
 				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="svg.html#write" class="tsd-kind-icon">write</a>
 				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a href="svg.html#read" class="tsd-kind-icon">read</a>
+				</li>
 			</ul>
 		</li>
 		<li class=" tsd-kind-interface">
@@ -991,6 +994,7 @@ img { max-width: 100%; }
 						<h3>Methods</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="svg.html#write" class="tsd-kind-icon">write</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="svg.html#read" class="tsd-kind-icon">read</a></li>
 						</ul>
 					</section>
 				</div>
@@ -1002,20 +1006,31 @@ img { max-width: 100%; }
 				<a name="constructor" class="tsd-anchor"></a>
 				<h3>constructor</h3>
 				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">new SVG<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="svg.html" class="tsd-signature-type">SVG</a></li>
+					<li class="tsd-signature tsd-kind-icon">new SVG<span class="tsd-signature-symbol">(</span>body<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="svg.html" class="tsd-signature-type">SVG</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/dglmoore/roc/blob/33bb97a/src/svg.ts#L13">svg.ts:13</a></li>
+								<li>Defined in <a href="https://github.com/dglmoore/roc/blob/f4fcc13/src/svg.ts#L23">svg.ts:23</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>Construct a new <a href="svg.html">SVG</a> instance with no content.</p>
+								<p>Construct a new <a href="svg.html">SVG</a> instance with optional content.</p>
 							</div>
 						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> body: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Optional DOM body content</p>
+									</div>
+								</div>
+							</li>
+						</ul>
 						<h4 class="tsd-returns-title">Returns <a href="svg.html" class="tsd-signature-type">SVG</a></h4>
 					</li>
 				</ul>
@@ -1029,7 +1044,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">handle<span class="tsd-signature-symbol">:</span> </div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/dglmoore/roc/blob/33bb97a/src/svg.ts#L40">svg.ts:40</a></li>
+						<li>Defined in <a href="https://github.com/dglmoore/roc/blob/f4fcc13/src/svg.ts#L56">svg.ts:56</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1045,7 +1060,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">html<span class="tsd-signature-symbol">:</span> </div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/dglmoore/roc/blob/33bb97a/src/svg.ts#L31">svg.ts:31</a></li>
+						<li>Defined in <a href="https://github.com/dglmoore/roc/blob/f4fcc13/src/svg.ts#L47">svg.ts:47</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1067,7 +1082,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/dglmoore/roc/blob/33bb97a/src/svg.ts#L50">svg.ts:50</a></li>
+								<li>Defined in <a href="https://github.com/dglmoore/roc/blob/f4fcc13/src/svg.ts#L66">svg.ts:66</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1086,6 +1101,38 @@ img { max-width: 100%; }
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						<p>A promise which resolves once the file has been written.</p>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+				<a name="read" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagStatic">Static</span> read</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<li class="tsd-signature tsd-kind-icon">read<span class="tsd-signature-symbol">(</span>filename<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="svg.html" class="tsd-signature-type">SVG</a><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/dglmoore/roc/blob/f4fcc13/src/svg.ts#L16">svg.ts:16</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Read an SVG from a file.</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>filename: <span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>The filename of the file from which to read.</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="svg.html" class="tsd-signature-type">SVG</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						<p>A promise which resolve to an SVG with the file contents.</p>
 					</li>
 				</ul>
 			</section>
