@@ -9,7 +9,7 @@
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\" \"test/**/*.ts\" \"test/**/*.js\"",
     "lint": "tslint -t codeFrame -p tsconfig.json",
     "test": "jest --detectOpenHandles --config jestconfig.json",
-	"docs": "typedoc src",
+    "docs": "typedoc src",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
@@ -30,15 +30,19 @@
     "lib/**/*"
   ],
   "dependencies": {
-    "tslint": "^5.16.0",
-    "typescript": "^3.4.5"
+    "d3": "^5.9.2",
+    "jsdom": "^15.1.0"
   },
   "devDependencies": {
+    "@types/d3": "^5.7.2",
     "@types/jest": "^24.0.13",
+    "@types/jsdom": "^12.2.3",
     "jest": "^24.8.0",
     "prettier": "^1.17.1",
     "ts-jest": "^24.0.2",
+    "tslint": "^5.16.0",
     "tslint-config-prettier": "^1.18.0",
-    "typedoc": "^0.14.2"
+    "typedoc": "^0.14.2",
+    "typescript": "^3.4.5"
   }
 }
