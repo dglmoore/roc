@@ -930,6 +930,9 @@ img { max-width: 100%; }
 				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a href="roc.html#auc" class="tsd-kind-icon">auc</a>
 				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a href="roc.html#plot" class="tsd-kind-icon">plot</a>
+				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
 					<a href="roc.html#curve" class="tsd-kind-icon">curve</a>
 				</li>
@@ -937,6 +940,12 @@ img { max-width: 100%; }
 		</li>
 		<li class=" tsd-kind-class">
 			<a href="svg.html" class="tsd-kind-icon">SVG</a>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="../interfaces/iplotformat.html" class="tsd-kind-icon">IPlot<wbr>Format</a>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="../interfaces/iplotmargins.html" class="tsd-kind-icon">IPlot<wbr>Margins</a>
 		</li>
 		<li class=" tsd-kind-interface">
 			<a href="../interfaces/ipoint.html" class="tsd-kind-icon">IPoint</a>
@@ -1007,6 +1016,7 @@ img { max-width: 100%; }
 						<h3>Methods</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="roc.html#auc" class="tsd-kind-icon">auc</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="roc.html#plot" class="tsd-kind-icon">plot</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="roc.html#curve" class="tsd-kind-icon">curve</a></li>
 						</ul>
 					</section>
@@ -1026,7 +1036,7 @@ img { max-width: 100%; }
 						<aside class="tsd-sources">
 							<p>Overrides <a href="curve.html">Curve</a>.<a href="curve.html#constructor">constructor</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/dglmoore/roc/blob/f4fcc13/src/roc.ts#L55">roc.ts:55</a></li>
+								<li>Defined in <a href="https://github.com/dglmoore/roc/blob/bedca83/src/roc.ts#L56">roc.ts:56</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1078,7 +1088,7 @@ img { max-width: 100%; }
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="curve.html">Curve</a>.<a href="curve.html#points">points</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/dglmoore/roc/blob/f4fcc13/src/curve.ts#L20">curve.ts:20</a></li>
+						<li>Defined in <a href="https://github.com/dglmoore/roc/blob/bedca83/src/curve.ts#L76">curve.ts:76</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1091,7 +1101,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">fpr<span class="tsd-signature-symbol">:</span> </div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/dglmoore/roc/blob/f4fcc13/src/roc.ts#L46">roc.ts:46</a></li>
+						<li>Defined in <a href="https://github.com/dglmoore/roc/blob/bedca83/src/roc.ts#L47">roc.ts:47</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1106,7 +1116,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">tpr<span class="tsd-signature-symbol">:</span> </div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/dglmoore/roc/blob/f4fcc13/src/roc.ts#L53">roc.ts:53</a></li>
+						<li>Defined in <a href="https://github.com/dglmoore/roc/blob/bedca83/src/roc.ts#L54">roc.ts:54</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1129,7 +1139,7 @@ img { max-width: 100%; }
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="curve.html">Curve</a>.<a href="curve.html#auc">auc</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/dglmoore/roc/blob/f4fcc13/src/curve.ts#L38">curve.ts:38</a></li>
+								<li>Defined in <a href="https://github.com/dglmoore/roc/blob/bedca83/src/curve.ts#L94">curve.ts:94</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1138,6 +1148,36 @@ img { max-width: 100%; }
 							</div>
 						</div>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<a name="plot" class="tsd-anchor"></a>
+				<h3>plot</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<li class="tsd-signature tsd-kind-icon">plot<span class="tsd-signature-symbol">(</span>format<span class="tsd-signature-symbol">?: </span><a href="../interfaces/iplotformat.html" class="tsd-signature-type">IPlotFormat</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="svg.html" class="tsd-signature-type">SVG</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<p>Overrides <a href="curve.html">Curve</a>.<a href="curve.html#plot">plot</a></p>
+							<ul>
+								<li>Defined in <a href="https://github.com/dglmoore/roc/blob/bedca83/src/roc.ts#L95">roc.ts:95</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Plot the curve as an SVG.</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> format: <a href="../interfaces/iplotformat.html" class="tsd-signature-type">IPlotFormat</a></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="svg.html" class="tsd-signature-type">SVG</a></h4>
+						<p>The beautiful plot.</p>
 					</li>
 				</ul>
 			</section>
@@ -1151,7 +1191,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/dglmoore/roc/blob/f4fcc13/src/roc.ts#L18">roc.ts:18</a></li>
+								<li>Defined in <a href="https://github.com/dglmoore/roc/blob/bedca83/src/roc.ts#L19">roc.ts:19</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">

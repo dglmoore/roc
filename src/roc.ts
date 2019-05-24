@@ -1,4 +1,5 @@
-import { Curve } from './curve';
+import { Curve, IPlotFormat } from './curve';
+import { SVG } from './svg';
 import * as util from './util';
 
 /**
@@ -83,5 +84,27 @@ export class ROC extends Curve {
                 return { x, y: tpr[i] };
             }),
         );
+    }
+
+    /**
+     * Plot the curve as an SVG.
+     *
+     * @param fmt The format to use for the plot.
+     * @return The beautiful plot.
+     */
+    public plot(format?: IPlotFormat): SVG {
+        const fmt: IPlotFormat = Object.assign(
+            {
+                diagonal: true,
+                title: 'ROC',
+                xlabel: 'FPR',
+                xrange: [0, 1],
+                ylabel: 'TPR',
+                yrange: [0, 1],
+            },
+            format,
+        );
+
+        return super.plot(fmt);
     }
 }

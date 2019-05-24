@@ -52,3 +52,10 @@ describe('ROC from a classification', function() {
         expect(ROC.curve(real, score)).toEqual(new ROC(fpr, tpr));
     });
 });
+
+describe('plotting', function() {
+    test('.can plot an ROC curve', function() {
+        const svg = ROC.curve([false, false, true, true, true], [0, 2, 1, 3, 4]).plot();
+        expect(svg.html).not.toEqual('<svg version="1.1" xmlns="http://www.w3.org/2000/svg"></svg>');
+    });
+});

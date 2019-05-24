@@ -28,3 +28,24 @@ test.each`
     });
     expect(new Curve(points).auc()).toBeCloseTo(auc);
 });
+
+describe('plotting', function() {
+    test('.can plot a simple line', function() {
+        const svg = new Curve([{ x: 0, y: 0 }, { x: 1, y: 1 }]).plot({
+            title: 'Title',
+            xlabel: 'X',
+            ylabel: 'Y',
+        });
+        expect(svg.html).not.toEqual('<svg version="1.1" xmlns="http://www.w3.org/2000/svg"></svg>');
+    });
+
+    test('.can plot a simple line with diagonal', function() {
+        const svg = new Curve([{ x: 0, y: 0 }, { x: 1, y: 1 }]).plot({
+            title: 'Title',
+            xlabel: 'X',
+            ylabel: 'Y',
+            diagonal: true,
+        });
+        expect(svg.html).not.toEqual('<svg version="1.1" xmlns="http://www.w3.org/2000/svg"></svg>');
+    });
+});
