@@ -17,6 +17,26 @@ export interface IPoint {
 }
 
 /**
+ * Compare two [[IPoint]] instances for sorting.
+ */
+function pointCompare(p: IPoint, q: IPoint) {
+    if (p.x < q.x) {
+        return -1;
+    } else if (p.x > q.x) {
+        return 1;
+    } else if (p.y <= 0 && q.y <= 0 && p.y > q.y) {
+        return -1;
+    } else if (p.y <= 0 && q.y <= 0 && p.y < q.y) {
+        return 1;
+    } else if (p.y < q.y) {
+        return -1;
+    } else if (p.y > q.y) {
+        return 1;
+    }
+    return 0;
+}
+
+/**
  * The [[IMargins]] interface represents the margins of a plot.
  */
 export interface IPlotMargins {
@@ -79,13 +99,14 @@ export class Curve {
      * Construct a [[Curve]] from an array of [[IPoint]] objects.
      *
      * @param points An array of points
+     * @param sort Whether or not to sort the points
      * @throws `Error` if `points` has fewer than two points
      */
-    constructor(points: IPoint[]) {
+    constructor(points: IPoint[], sort: boolean = false) {
         if (points.length < 2) {
             throw new Error('curve must have at least two points');
         }
-        this.points = points;
+        this.points = sort ? points : points.sort(pointCompare);
     }
 
     /**

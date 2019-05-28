@@ -82,7 +82,7 @@ export class ROC extends Curve {
         super(
             fpr.map((x, i) => {
                 return { x, y: tpr[i] };
-            }),
+            }, true),
         );
     }
 
