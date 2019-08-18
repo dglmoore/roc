@@ -99,14 +99,21 @@ export class Curve {
      * Construct a [[Curve]] from an array of [[IPoint]] objects.
      *
      * @param points An array of points
+     * @param dropInter Drop intermediate colinear points from the curve (forces `sort = true`)
      * @param sort Whether or not to sort the points
      * @throws `Error` if `points` has fewer than two points
      */
-    constructor(points: IPoint[], sort: boolean = false) {
+    constructor(points: IPoint[], dropInter: boolean = false, sort: boolean = false) {
         if (points.length < 2) {
             throw new Error('curve must have at least two points');
         }
-        this.points = sort ? points : points.sort(pointCompare);
+        this.points = (sort || dropInter) ? points.slice().sort(pointCompare) : points.slice();
+        if (dropInter && this.points.length > 2) {
+            for (let i: number = 1; i < this.points.length - 1;) {
+                const [a, b, c] = this.points.slice(i-1, i+2);
+				// test for collinearity
+            }
+        }
     }
 
     /**

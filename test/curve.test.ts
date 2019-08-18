@@ -27,7 +27,37 @@ describe('construction', function() {
         ${[{ x: 1, y: -0.8 }, { x: 1, y: 0.5 }]}  | ${[{ x: 1, y: -0.8 }, { x: 1, y: 0.5 }]}
         ${[{ x: 1, y: 0.5 }, { x: 1, y: -0.8 }]}  | ${[{ x: 1, y: -0.8 }, { x: 1, y: 0.5 }]}
     `('.sorts $before to $after', function({ before, after }) {
-        expect(new Curve(before).points).toEqual(after);
+        expect(new Curve(before, false, true).points).toEqual(after);
+    });
+
+    test.each`
+        before                                    | after
+        ${[{ x: 0, y: 0 }, { x: 1, y: 1 }]}       | ${[{ x: 0, y: 0 }, { x: 1, y: 1 }]}
+        ${[{ x: 1, y: 0 }, { x: 0, y: 1 }]}       | ${[{ x: 0, y: 1 }, { x: 1, y: 0 }]}
+        ${[{ x: 0, y: 0 }, { x: 0, y: 1 }]}       | ${[{ x: 0, y: 0 }, { x: 0, y: 1 }]}
+        ${[{ x: 0, y: 1 }, { x: 0, y: 0 }]}       | ${[{ x: 0, y: 0 }, { x: 0, y: 1 }]}
+        ${[{ x: 0, y: 0 }, { x: 0, y: -1 }]}      | ${[{ x: 0, y: 0 }, { x: 0, y: -1 }]}
+        ${[{ x: 0, y: -1 }, { x: 0, y: 0 }]}      | ${[{ x: 0, y: 0 }, { x: 0, y: -1 }]}
+        ${[{ x: 0, y: 0.8 }, { x: 0, y: 0.6 }]}   | ${[{ x: 0, y: 0.6 }, { x: 0, y: 0.8 }]}
+        ${[{ x: 0, y: 0.6 }, { x: 0, y: 0.8 }]}   | ${[{ x: 0, y: 0.6 }, { x: 0, y: 0.8 }]}
+        ${[{ x: 0, y: -0.8 }, { x: 0, y: -0.6 }]} | ${[{ x: 0, y: -0.6 }, { x: 0, y: -0.8 }]}
+        ${[{ x: 1, y: 0.8 }, { x: 1, y: 0.6 }]}   | ${[{ x: 1, y: 0.6 }, { x: 1, y: 0.8 }]}
+        ${[{ x: 1, y: 0.6 }, { x: 1, y: 0.8 }]}   | ${[{ x: 1, y: 0.6 }, { x: 1, y: 0.8 }]}
+        ${[{ x: 1, y: -0.8 }, { x: 1, y: -0.6 }]} | ${[{ x: 1, y: -0.6 }, { x: 1, y: -0.8 }]}
+        ${[{ x: 1, y: -0.8 }, { x: 1, y: 0.5 }]}  | ${[{ x: 1, y: -0.8 }, { x: 1, y: 0.5 }]}
+        ${[{ x: 1, y: 0.5 }, { x: 1, y: -0.8 }]}  | ${[{ x: 1, y: -0.8 }, { x: 1, y: 0.5 }]}
+    `('.dropInter forces sort $before to $after', function({ before, after }) {
+        expect(new Curve(before, true).points).toEqual(after);
+    });
+
+    test.each`
+        before                                              | after
+        ${[{ x: 0, y: 0 }, { x: 0, y: 0 }, { x: 1, y: 1 }]} | ${[{ x: 0, y: 0 }, { x: 1, y: 1 }]}
+        ${[{ x: 0, y: 0 }, { x: 1, y: 1 }, { x: 1, y: 1 }]} | ${[{ x: 0, y: 0 }, { x: 1, y: 1 }]}
+        ${[{ x: 0, y: 0 }, { x: 0.5, y: 0.5 }, { x: 1, y: 1 }]} | ${[{ x: 0, y: 0 }, { x: 1, y: 1 }]}
+        ${[{ x: 0, y: 0 }, { x: 0.25, y: 0.25 }, { x: 0.75, y: 0.75}, { x: 1, y: 1 }]} | ${[{ x: 0, y: 0 }, { x: 1, y: 1 }]}
+    `('.dropInter works', function({ before, after }) {
+        expect(new Curve(before, true).points).toEqual(after);
     });
 });
 
